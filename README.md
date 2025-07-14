@@ -19,25 +19,40 @@ This Python program implements a **Trie** (prefix tree) data structure to facili
 - **User Interaction**  
   The program prompts the user to input a word prefix, and then returns ranked suggestions. The user can enter a new prefix or exit by entering '0'.
 
-## How It Works
+## File Structure and How to Use
 
-1. **Input Files**  
-   The program first asks the user to enter a file name (e.g., `abc.txt`), which contains a list of filenames (e.g., `dictionary.txt`, `novel.txt`). Each file should contain words to be inserted into the Trie.
+### Files Overview
 
-2. **Trie Node Structure**  
-   Each node in the Trie is a dictionary. The `children` field stores the child nodes, the `wordEnd` field indicates if the node marks the end of a word, and the `frequency` field keeps track of how often the word has been inserted.
+1. **main.txt**  
+   This file contains paths to **book1.txt** and **book2.txt**, which are essential data sources for the Trie. The **main.txt** file points to the text files containing the words to be used for autocomplete.
 
-3. **Autocomplete**  
-   The `autoComplete(prefix)` method finds all words starting with the given prefix and ranks them by frequency.
+2. **book1.txt**  
+   This text file includes a collection of words that will be loaded into the Trie to provide autocomplete suggestions when users enter a prefix.
 
-4. **User Input**  
-   - The user can input a word prefix (e.g., "ca") to see a ranked list of words starting with that prefix.
-   - The program continuously prompts the user until they enter '0' to quit.
+3. **book2.txt**  
+   Similar to **book1.txt**, this file contains additional words that will be loaded into the Trie for autocomplete functionality.
 
-5. **Error Handling**  
-   - The program checks if the input file exists. If not, it raises an exception.
-   - If a file does not exist, it throws an exception and prompts the user for valid files.
+4. **assignment_4.py**  
+   The main Python script where the Trie is implemented. It reads **main.txt**, loads words from **book1.txt** and **book2.txt** into the Trie, and provides autocomplete functionality based on user input.
 
+### How to Use the Files
+
+1. **Ensure the Files Are Accessible**  
+   Before running the program, make sure that **main.txt**, **book1.txt**, and **book2.txt** are in the correct directory, or adjust the paths in **main.txt** accordingly to where these files are located on your system.
+
+2. **Run the Program**  
+   - Open a terminal and navigate to the directory containing **assignment_4.py**.
+   - Run the following command to start the program:
+     ```bash
+     python assignment_4.py
+     ```
+
+3. **Input the File Paths**  
+   - The program will ask you to enter the **main.txt** file. This file contains the paths to **book1.txt** and **book2.txt**. Enter the full path to **main.txt** when prompted.
+
+4. **Autocomplete Suggestions**  
+   - After the words are loaded from **book1.txt** and **book2.txt**, the program will prompt you to enter a prefix (e.g., "ca").
+   - The program will display ranked autocomplete suggestions based on the frequency of the words.
 
 ## Installation
 
